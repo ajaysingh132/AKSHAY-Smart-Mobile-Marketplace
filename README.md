@@ -1,107 +1,44 @@
-# AKSHAY-Smart-Mobile-Marketplace# AKSHAY
+# माँ शारदा जनरल मार्केटप्लेस
+**पुराना प्रोजेक्ट नाम:** AKSHAY Smart Mobile Marketplace  
+**नया ब्रांड:** माँ शारदा जनरल मार्केटप्लेस  
+**उद्देश्य:** मोबाइल, मनिहारी, कॉस्मेटिक्स, निजी उपयोग, घरेलू सामान, किचन, स्टेशनरी और विविध उत्पादों के लिए होलसेल + फुटकर बाजार।
 
-## Smart Mobile Marketplace
+## वर्तमान संस्करण
+यह GitHub Pages के लिए मोबाइल-फ्रेंडली फ्रंटएंड प्रोटोटाइप है।
 
-AKSHAY is a modern Mobile, Accessories, Wholesale and Retail Marketplace built with HTML, CSS and JavaScript.
+### शामिल
+- हिंदी लैंडिंग पेज
+- मोबाइल-फ्रेंडली लेआउट
+- उत्पाद श्रेणियाँ
+- डेमो उत्पाद कैटलॉग
+- नाम/श्रेणी खोज
+- होलसेल और फुटकर फ़िल्टर
+- WhatsApp पूछताछ लिंक
+- व्यापारी पंजीकरण आवेदन फॉर्म जो WhatsApp में संदेश तैयार करता है
 
-This is the official demo version for client presentation.
+### जरूरी सीमा
+वर्तमान उत्पाद सूची उदाहरण के लिए है। वास्तविक सप्लायर, स्टॉक, मूल्य या ऑर्डर डेटाबेस से कनेक्ट नहीं हैं। व्यापारी आवेदन अपने आप किसी डेटाबेस में सेव नहीं होता; वह WhatsApp संदेश तैयार करता है। वास्तविक ऑर्डर, लॉगिन, भुगतान, स्टॉक और AI प्रबंधन सक्रिय करने से पहले सुरक्षित बैकएंड आवश्यक है। उत्पाद कीमतें डेमो हैं, इन्हें वास्तविक कोटेशन न समझें।
 
----
+## फ़ाइलें
+- `index.html` — होमपेज और कैटलॉग UI
+- `css/style.css` — मोबाइल-फर्स्ट डिजाइन
+- `js/app.js` — डेमो उत्पाद, खोज, फ़िल्टर और WhatsApp आवेदन
 
-## Features
+## अगला विकास रोडमैप
+1. Supabase/PostgreSQL डेटाबेस
+2. व्यापारी और खरीदार प्रमाणीकरण
+3. उत्पाद, फोटो, वास्तविक कीमत और स्टॉक CRUD
+4. एडमिन द्वारा सप्लायर सत्यापन
+5. ऑर्डर, ऑर्डर स्टेटस और ऑडिट लॉग
+6. ग्राहक/सप्लायर खातों और आय-व्यय का प्रबंधन
+7. AI Business Manager (केवल सत्यापित डेटाबेस डेटा पर)
+8. भुगतान प्रदाता एकीकरण, रिफंड और विवाद प्रक्रिया
+9. बैकअप, सुरक्षा नियम, परीक्षण और गोपनीयता नीति
 
-- Responsive Design
-- Mobile First UI
-- Product Categories
-- Featured Products
-- Wholesale Marketplace
-- Dealer Registration
-- Trusted Suppliers
-- WhatsApp Order
-- Contact Page
-- Fast Loading
-- SEO Friendly
+## GitHub Pages
+Repository Settings → Pages में प्रकाशित स्रोत कॉन्फ़िगर करें। अगर Pages पहले से सक्रिय है तो परिवर्तन प्रकाशित होने में कुछ मिनट लग सकते हैं।
 
----
-
-## Product Categories
-
-- Smartphones
-- Mobile Accessories
-- Chargers
-- USB Cables
-- Neckbands
-- Earbuds
-- Smart Watches
-- Power Banks
-- Tempered Glass
-- Mobile Covers
-
----
-
-## Wholesale Services
-
-- Dealer Registration
-- Bulk Orders
-- GST Billing
-- Trusted Suppliers
-- Wholesale Price Inquiry
-
----
-
-## Technology
-
-- HTML5
-- CSS3
-- JavaScript
-- GitHub Pages
-- Progressive Web App (Future)
-
----
-
-## Project Structure
-
-```
-akshay-in-demo/
-│
-├── index.html
-├── mobiles.html
-├── accessories.html
-├── wholesale.html
-├── dealers.html
-├── about.html
-├── contact.html
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── app.js
-│
-├── images/
-│
-└── README.md
-```
-
----
-
-## Future Roadmap
-
-- Shopping Cart
-- Admin Dashboard
-- Customer Login
-- Dealer Login
-- Inventory Management
-- Payment Gateway
-- Android PWA
-- AI Product Search
-
----
-
-## Vision
-
-To build a trusted digital marketplace connecting customers, retailers, wholesalers and suppliers across India.
-
----
-
-© 2026 AKSHAY. All Rights Reserved.
+## सुरक्षा
+- API secrets को HTML/JavaScript में न रखें।
+- सार्वजनिक उत्पादों और निजी व्यावसायिक डेटा के लिए अलग permissions रखें।
+- वास्तविक लेन-देन से पहले सत्यापन, टेस्टिंग और बैकअप लागू करें।
