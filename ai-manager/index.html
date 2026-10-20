@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#124d39"><meta name="description" content="माँ शारदा जनरल स्टोर का मोबाइल-फ्रेंडली स्थानीय व्यवसाय प्रबंधन डैशबोर्ड">
+<meta name="theme-color" content="#124d39"><meta name="description" content="माँ शारदा जनरल स्टोर का मोबाइल-फ्रेंडली स्थानीय व्यवसाय प्रबंधन डैशबोर्ड"><link rel="manifest" href="./manifest.webmanifest">
 <title>माँ शारदा जनरल स्टोर — AI मैनेजर</title>
 <style>
 :root{--green:#124d39;--green2:#1e7654;--cream:#f5f7f1;--ink:#17251d;--muted:#637166;--line:#dce5dc;--white:#fff;--orange:#f0a43a;--red:#b83c3c;--shadow:0 8px 28px #173b2510}
@@ -177,4 +177,5 @@ function renderAll(){renderDashboard();renderProducts();renderSales();renderPurc
 renderAll();
 })();
 </script>
+<script>if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}</script>
 </body></html>
