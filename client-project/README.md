@@ -45,5 +45,18 @@ This folder is the isolated staging package for the client-owned marketplace. It
 7. Test unauthenticated access, role boundaries, demo data replacement, backup/restore, mobile layouts, and deployment.
 8. Transfer repository, hosting, Supabase ownership, and operating documentation to the client when agreed.
 
-## Current status
-This is a planning/staging document, not a claim that the new repository, database, authentication, or production deployment already exists.
+## Current status (updated 2026-10-20)
+- Dedicated Supabase project created: `Maa-Sharda-General-Marketplace`.
+- Supabase project reference: `bmetxrjywxpmgmilggop` (region: `ap-south-1`, status reported `ACTIVE_HEALTHY`).
+- Initial migration applied successfully; verified tables: `user_profiles`, `suppliers`, `customers`, `products`, `trader_applications`, `orders`, `order_items`, `audit_logs`.
+- Marketplace visual styling updated in `marketplace/index.html`.
+- Dedicated GitHub repository is still pending; current files remain in the existing repository under `client-project/` and `marketplace/`.
+- Supabase Auth is not yet connected to the frontend; no first admin has been provisioned. Do not use the current localStorage admin panel for sensitive live data.
+- No production deployment, payment integration, backup/restore test, or client ownership transfer has been completed yet.
+
+## Next implementation steps
+1. Create the independent GitHub repository `Maa-Sharda-General-Marketplace` under `ajaysingh132` and move the approved source files into it.
+2. Configure Supabase Auth and safe frontend configuration using only the publishable key (never the service-role key in the browser).
+3. Set up a first administrator securely, test role restrictions and RLS from anonymous and authenticated sessions, and connect the four branches to the database.
+4. Test backup/restore, mobile behavior, and deployment before accepting real customer data.
+5. Transfer repository, hosting, Supabase ownership, and documentation to the client when agreed.
