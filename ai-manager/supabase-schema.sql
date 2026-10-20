@@ -200,10 +200,11 @@ create policy shops_owner_insert on public.shops for insert to authenticated wit
 drop policy if exists shops_owner_update on public.shops;
 create policy shops_owner_update on public.shops for update to authenticated using (owner_user_id = (select auth.uid())) with check (owner_user_id = (select auth.uid()));
 
-do $$
+do $
 declare t text;
 begin
-  foreach t in array array['products','customers','suppliers','purchases','purchase_items','sales','sale_items','expenses','settlements','stock_movements','audit_logs']
+  -- Reference data can be edited by the owner.
+  foreach t in array array['products','customers','suppliers']
   loop
     execute format('drop policy if exists owner_select on public.%I', t);
     execute format('create policy owner_select on public.%I for select to authenticated using (exists (select 1 from public.shops s where s.id = shop_id and s.owner_user_id = (select auth.uid())))', t);
@@ -212,7 +213,18 @@ begin
     execute format('drop policy if exists owner_update on public.%I', t);
     execute format('create policy owner_update on public.%I for update to authenticated using (exists (select 1 from public.shops s where s.id = shop_id and s.owner_user_id = (select auth.uid()))) with check (exists (select 1 from public.shops s where s.id = shop_id and s.owner_user_id = (select auth.uid())))', t);
   end loop;
-end $$;
+  -- Posted transactions, stock movements and audit logs are append-only to normal clients.
+  -- Corrections must be implemented as explicit void/reversal records by a reviewed server-side workflow.
+  foreach t in array array['purchases','purchase_items','sales','sale_items','expenses','settlements','stock_movements','audit_logs']
+  loop
+    execute format('drop policy if exists owner_select on public.%I', t);
+    execute format('create policy owner_select on public.%I for select to authenticated using (exists (select 1 from public.shops s where s.id = shop_id and s.owner_user_id = (select auth.uid())))', t);
+    execute format('drop policy if exists owner_insert on public.%I', t);
+    execute format('create policy owner_insert on public.%I for insert to authenticated with check (exists (select 1 from public.shops s where s.id = shop_id and s.owner_user_id = (select auth.uid())))', t);
+    execute format('drop policy if exists owner_update on public.%I', t);
+    execute format('drop policy if exists owner_delete on public.%I', t);
+  end loop;
+end $;
 
 -- Intentionally no DELETE policies for business records. Use void/reversal entries with a reason.
 -- Production follow-up: enforce shop_id consistency across parent/child references with constraints/triggers,
