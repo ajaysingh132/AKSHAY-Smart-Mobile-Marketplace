@@ -1,0 +1,12 @@
+{
+  "name": "माँ शारदा जनरल स्टोर — AI बिज़नेस मैनेजर",
+  "short_name": "माँ शारदा मैनेजर",
+  "description": "माँ शारदा जनरल स्टोर का हिंदी व्यवसाय प्रबंधन डैशबोर्ड",
+  "lang": "hi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f1",
+  "theme_color": "#124d39",
+  "icons": []
+}
