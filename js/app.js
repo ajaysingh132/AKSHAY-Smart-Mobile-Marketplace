@@ -73,3 +73,35 @@ document.getElementById("sellerForm").addEventListener("submit", event => {
 });
 document.getElementById("year").textContent = new Date().getFullYear();
 renderProducts();
+/* Accessible Book Depot dropdown and category shortcuts */
+const bookDropdown = document.querySelector(".nav-dropdown");
+const bookDropdownToggle = document.querySelector(".nav-dropdown-toggle");
+if (bookDropdown && bookDropdownToggle) {
+  bookDropdownToggle.addEventListener("click", () => {
+    const open = bookDropdown.classList.toggle("open");
+    bookDropdownToggle.setAttribute("aria-expanded", String(open));
+  });
+  document.addEventListener("click", event => {
+    if (!bookDropdown.contains(event.target)) {
+      bookDropdown.classList.remove("open");
+      bookDropdownToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      bookDropdown.classList.remove("open");
+      bookDropdownToggle.setAttribute("aria-expanded", "false");
+      bookDropdownToggle.focus();
+    }
+  });
+  bookDropdown.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+    bookDropdown.classList.remove("open");
+    bookDropdownToggle.setAttribute("aria-expanded", "false");
+  }));
+}
+document.querySelectorAll("[data-book-search]").forEach(button => button.addEventListener("click", () => {
+  selectedCategory = "बुक डिपो एवं प्रकाशन";
+  searchInput.value = button.dataset.bookSearch.split(/\s+/)[0];
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+  renderProducts();
+}));
