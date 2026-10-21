@@ -29,3 +29,14 @@
 @media(max-width:520px){.book-category-grid,.distribution-grid,.publisher-details-grid{gap:10px}.book-tile,.distribution-grid article,.publisher-details-grid article{padding:13px}.book-tile b,.publisher-details-grid b{font-size:.84rem}.book-tile small,.distribution-grid p,.publisher-details-grid p{font-size:.75rem}.nav-dropdown-toggle{font-size:.8rem}}
 
 .book-upload-form{max-width:1050px;margin:auto}.book-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.book-upload-form textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #cfdcd2;border-radius:9px;font:inherit;resize:vertical}.book-consent{display:flex!important;align-items:flex-start;gap:10px}.book-consent input{width:auto!important;margin-top:5px!important}.book-upload-form input[readonly]{background:#eef4ef;color:#174b35;font-weight:700}@media(max-width:600px){.book-form-grid{grid-template-columns:1fr}}
+
+/* Book Depot commission policy */
+.commission-policy-section{background:#f5faf6;border:1px solid #d9e9dd;border-radius:18px;padding:clamp(18px,3vw,32px)}
+.commission-policy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0}
+.commission-policy-grid article{background:#fff;border:1px solid #e0ebe3;border-radius:14px;padding:20px;box-shadow:0 4px 14px rgba(20,70,40,.05)}
+.commission-policy-grid h3{margin:10px 0 8px;font-size:1.05rem}
+.commission-policy-grid p{margin:0;color:#52645a;line-height:1.65}
+.commission-rate{display:inline-flex;align-items:center;justify-content:center;min-width:76px;height:54px;border-radius:12px;background:#e0f4e7;color:#176b3a;font-size:1.65rem;font-weight:800}
+.commission-icon{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:12px;background:#e0f4e7;font-size:1.65rem}
+.commission-policy-section>.book-note{line-height:1.7;margin:18px 0}
+@media(max-width:700px){.commission-policy-grid{grid-template-columns:1fr}.commission-policy-grid article{padding:16px}}
