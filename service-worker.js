@@ -1,8 +1,9 @@
-const CACHE_NAME = "maa-sharda-market-v1";
+const CACHE_NAME = "maa-sharda-market-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./css/style.css",
+  "./js/app.js",
   "./manifest.webmanifest",
   "./icons/icon.svg"
 ];
