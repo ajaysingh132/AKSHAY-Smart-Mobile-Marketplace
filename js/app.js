@@ -105,3 +105,20 @@ document.querySelectorAll("[data-book-search]").forEach(button => button.addEven
   document.getElementById("products").scrollIntoView({behavior:"smooth"});
   renderProducts();
 }));
+
+/* Book submission: client-side reference only; no automatic publishing */
+const bookForm = document.getElementById("bookUploadForm");
+if (bookForm) {
+  const idInput = document.getElementById("bookId");
+  const generateBookId = () => "MSB-" + Date.now().toString(36).toUpperCase() + "-" + Math.random().toString(36).slice(2,6).toUpperCase();
+  idInput.value = generateBookId();
+  bookForm.addEventListener("submit", event => {
+    event.preventDefault();
+    if (!bookForm.reportValidity()) return;
+    const d = new FormData(bookForm);
+    const fields = [["बुक आईडी","bookId"],["ISBN","isbn"],["शीर्षक","title"],["लेखक","author"],["प्रकाशक","publisher"],["प्रकाशन वर्ष","year"],["संस्करण","edition"],["भाषा","language"],["श्रेणी","bookCategory"],["प्रारूप","format"],["मूल्य ₹","price"],["पृष्ठ","pages"],["संपर्क","contact"],["मोबाइल","phone"],["पुस्तक लिंक","bookLink"],["कवर लिंक","coverLink"],["विवरण","description"]];
+    const message = "माँ शारदा मार्केटप्लेस — पुस्तक प्रकाशन समीक्षा आवेदन\n" + fields.map(([label,key]) => label + ": " + (d.get(key) || "उपलब्ध नहीं")).join("\n") + "\nअधिकार पुष्टि: हाँ\nकृपया सत्यापन और फ़ाइल साझा करने की प्रक्रिया बताएँ।";
+    window.open("https://wa.me/" + SUPPORT_WHATSAPP + "?text=" + encodeURIComponent(message), "_blank", "noopener");
+    idInput.value = generateBookId();
+  });
+}
