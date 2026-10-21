@@ -24,6 +24,15 @@
     <nav aria-label="मुख्य नेविगेशन">
       <a href="#categories">श्रेणियाँ</a>
       <a href="#products">उत्पाद</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="bookMenu">📚 बुक डिपो <span aria-hidden="true">▾</span></button>
+        <div class="nav-dropdown-menu" id="bookMenu">
+          <a href="#book-categories">पुस्तक श्रेणियाँ</a>
+          <a href="#book-distribution">पुस्तक वितरण</a>
+          <a href="#publishers">प्रकाशक विवरण</a>
+          <a href="#sell">बुक विक्रेता / प्रकाशक जुड़ें</a>
+        </div>
+      </div>
       <a href="#sell">व्यापारी बनें</a>
       <a href="#how">कैसे काम करता है</a>
       <a href="marketplace/">चार शाखाओं वाला मार्केटप्लेस</a>
@@ -79,7 +88,7 @@
         <button class="category-card" data-category="किचन" type="button"><span>🍽️</span><b>किचन और प्लास्टिक</b><small>बर्तन, डिब्बे, बाल्टी</small></button>
         <button class="category-card" data-category="स्टेशनरी" type="button"><span>✏️</span><b>स्टेशनरी</b><small>कॉपी, पेन, स्कूल सामग्री</small></button>
         <button class="category-card" data-category="गिफ्ट" type="button"><span>🎁</span><b>गिफ्ट और अन्य</b><small>उपहार और विविध उत्पाद</small></button>
-        <button class="category-card book-category" data-category="बुक डिपो" type="button"><span>📚</span><b>बुक डिपो</b><small>स्कूल-कॉलेज, प्रतियोगी परीक्षा, धार्मिक, साहित्य, बाल पुस्तकें और अन्य</small></button>
+        <button class="category-card book-category" data-category="बुक डिपो एवं प्रकाशन" type="button"><span>📚</span><b>बुक डिपो</b><small>स्कूल-कॉलेज, प्रतियोगी परीक्षा, धार्मिक, साहित्य, बाल पुस्तकें और अन्य</small></button>
       </div>
     </section>
 
@@ -88,6 +97,42 @@
       <div id="productGrid" class="product-grid" aria-live="polite"></div>
       <p id="emptyState" class="empty-state" hidden>इस खोज में उत्पाद नहीं मिला। दूसरा नाम या श्रेणी आज़माएँ।</p>
       <div class="demo-note">डेमो कैटलॉग • अभी वास्तविक स्टॉक, सप्लायर या भुगतान से कनेक्ट नहीं है।</div>
+    </section>
+
+    <section id="book-categories" class="section book-hub">
+      <div class="section-heading"><div><span class="eyebrow">बुक डिपो</span><h2>सभी प्रकार की पुस्तकें</h2></div><p>पाठकों, दुकानदारों, स्कूलों, पुस्तकालयों और संस्थानों के लिए पुस्तक श्रेणियाँ। किसी श्रेणी पर टैप करके संबंधित डेमो उत्पाद देखें।</p></div>
+      <div class="book-category-grid">
+        <button class="book-tile" data-book-search="स्कूल कॉलेज पाठ्यपुस्तक" type="button"><span>🎒</span><b>स्कूल एवं कॉलेज</b><small>NCERT, पाठ्यपुस्तकें, गाइड और संदर्भ पुस्तकें</small></button>
+        <button class="book-tile" data-book-search="प्रतियोगी परीक्षा" type="button"><span>📝</span><b>प्रतियोगी परीक्षाएँ</b><small>UPSC, राज्य PSC, SSC, रेलवे, बैंकिंग आदि</small></button>
+        <button class="book-tile" data-book-search="धार्मिक आध्यात्मिक" type="button"><span>🕉️</span><b>धार्मिक एवं आध्यात्मिक</b><small>वेद, उपनिषद, गीता, रामायण और पूजा-पाठ</small></button>
+        <button class="book-tile" data-book-search="साहित्य उपन्यास" type="button"><span>📖</span><b>साहित्य एवं उपन्यास</b><small>कहानी, कविता, जीवनी और हिंदी-अन्य भाषा साहित्य</small></button>
+        <button class="book-tile" data-book-search="बच्चों की पुस्तकें" type="button"><span>🧒</span><b>बाल साहित्य</b><small>चित्र पुस्तकें, गतिविधि और शुरुआती शिक्षा</small></button>
+        <button class="book-tile" data-book-search="सामान्य ज्ञान शब्दकोश" type="button"><span>🌐</span><b>सामान्य ज्ञान एवं शब्दकोश</b><small>GK, शब्दकोश, विश्वकोश और संदर्भ सामग्री</small></button>
+        <button class="book-tile" data-book-search="कृषि व्यवसाय तकनीकी" type="button"><span>💻</span><b>कृषि, व्यवसाय एवं तकनीकी</b><small>कृषि, कंप्यूटर, विज्ञान, कौशल और प्रबंधन</small></button>
+        <button class="book-tile" data-book-search="सभी पुस्तकें" type="button"><span>📚</span><b>अन्य सभी पुस्तकें</b><small>नई श्रेणियाँ और विशेष पुस्तकें जोड़ने की सुविधा</small></button>
+      </div>
+    </section>
+
+    <section id="book-distribution" class="section book-distribution">
+      <div class="section-heading"><div><span class="eyebrow">बुक सप्लाई नेटवर्क</span><h2>पुस्तक वितरण एवं आपूर्ति</h2></div><p>बुक डिपो, थोक वितरक, खुदरा दुकान, स्कूल, कॉलेज और पुस्तकालयों को जोड़ने की प्रस्तावित सुविधा।</p></div>
+      <div class="distribution-grid">
+        <article><span>📦</span><h3>थोक पुस्तक वितरण</h3><p>बुक डिपो और दुकानदारों के लिए श्रेणीवार थोक पूछताछ तथा न्यूनतम ऑर्डर विवरण।</p></article>
+        <article><span>🏫</span><h3>स्कूल-कॉलेज सप्लाई</h3><p>संस्थानों की पुस्तक सूची, कक्षा, विषय, संस्करण और अनुमानित मात्रा के आधार पर अनुरोध।</p></article>
+        <article><span>🏛️</span><h3>पुस्तकालय एवं संस्थान</h3><p>पुस्तकालयों और संगठनों के लिए विषयवार पुस्तक-सूची तथा सप्लायर से संपर्क।</p></article>
+        <article><span>🚚</span><h3>डिलीवरी एवं ऑर्डर स्थिति</h3><p>अगले चरण में स्थान, परिवहन लागत, डिलीवरी समय और ऑर्डर ट्रैकिंग जोड़ी जा सकती है।</p></article>
+      </div>
+      <p class="book-note">नोट: अभी यह जानकारी/पूछताछ हेतु डेमो है। वास्तविक वितरक, स्टॉक, डिलीवरी और दरें सत्यापन के बाद प्रकाशित होंगी।</p>
+    </section>
+
+    <section id="publishers" class="section publishers-section">
+      <div class="section-heading"><div><span class="eyebrow">प्रकाशक नेटवर्क</span><h2>प्रकाशक का विवरण</h2></div><p>प्रकाशकों और उनके कैटलॉग के लिए एक समर्पित विवरण-पृष्ठ। सत्यापित जानकारी मिलने पर ही सार्वजनिक सूची में प्रकाशक जोड़े जाएँगे।</p></div>
+      <div class="publisher-details-grid">
+        <article><b>प्रकाशक / इम्प्रिंट का नाम</b><p>प्रकाशन संस्था या इम्प्रिंट का आधिकारिक नाम</p></article>
+        <article><b>पुस्तक सूची / कैटलॉग</b><p>पुस्तक का नाम, लेखक, विषय, भाषा, संस्करण और ISBN (जहाँ लागू हो)</p></article>
+        <article><b>वितरण क्षेत्र</b><p>शहर, राज्य, देश तथा थोक/खुदरा उपलब्धता</p></article>
+        <article><b>संपर्क विवरण</b><p>आधिकारिक वेबसाइट, ईमेल, फोन और अधिकृत वितरण संपर्क</p></article>
+      </div>
+      <a class="button" href="#sell">प्रकाशक / वितरक के रूप में पंजीकरण करें</a>
     </section>
 
     <section id="sell" class="seller-section">
