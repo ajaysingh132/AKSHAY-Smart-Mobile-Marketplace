@@ -30,6 +30,7 @@
           <a href="#book-categories">पुस्तक श्रेणियाँ</a>
           <a href="#book-distribution">पुस्तक वितरण</a>
           <a href="#publishers">प्रकाशक विवरण</a>
+          <a href="#book-upload">पुस्तक अपलोड आवेदन</a>
           <a href="#sell">बुक विक्रेता / प्रकाशक जुड़ें</a>
         </div>
       </div>
@@ -133,6 +134,34 @@
         <article><b>संपर्क विवरण</b><p>आधिकारिक वेबसाइट, ईमेल, फोन और अधिकृत वितरण संपर्क</p></article>
       </div>
       <a class="button" href="#sell">प्रकाशक / वितरक के रूप में पंजीकरण करें</a>
+    </section>
+
+    <section id="book-upload" class="section">
+      <div class="section-heading"><div><span class="eyebrow">प्रकाशन पंजीकरण</span><h2>📚 पुस्तक अपलोड आवेदन फॉर्म</h2></div><p>पुस्तक का विवरण भरें। आवेदन समीक्षा के बाद ही वेबसाइट पर प्रकाशित किया जाएगा।</p></div>
+      <form id="bookUploadForm" class="seller-form book-upload-form">
+        <div class="book-form-grid">
+          <label>बुक आईडी (आवेदन संदर्भ)<input name="bookId" id="bookId" readonly aria-label="बुक आईडी"></label>
+          <label>ISBN-13 (यदि उपलब्ध हो)<input name="isbn" maxlength="17" placeholder="978..."></label>
+          <label>पुस्तक का शीर्षक *<input name="title" required maxlength="180"></label>
+          <label>लेखक का नाम *<input name="author" required maxlength="120"></label>
+          <label>प्रकाशक / प्रकाशन संस्था *<input name="publisher" required maxlength="150"></label>
+          <label>प्रकाशन वर्ष<input name="year" type="number" min="1800" max="2100"></label>
+          <label>संस्करण / एडिशन<input name="edition" maxlength="80"></label>
+          <label>भाषा *<select name="language" required><option value="">चुनें</option><option>हिंदी</option><option>अंग्रेज़ी</option><option>संस्कृत</option><option>मराठी</option><option>अन्य</option></select></label>
+          <label>पुस्तक श्रेणी *<select name="bookCategory" required><option value="">चुनें</option><option>स्कूल एवं कॉलेज</option><option>प्रतियोगी परीक्षा</option><option>धार्मिक एवं आध्यात्मिक</option><option>साहित्य एवं उपन्यास</option><option>बाल साहित्य</option><option>सामान्य ज्ञान एवं शब्दकोश</option><option>कृषि, व्यवसाय एवं तकनीकी</option><option>अन्य</option></select></label>
+          <label>प्रारूप *<select name="format" required><option value="">चुनें</option><option>मुद्रित पुस्तक</option><option>ई-बुक PDF</option><option>ई-बुक EPUB</option><option>ऑडियोबुक</option></select></label>
+          <label>मूल्य (₹) *<input name="price" type="number" min="0" step="0.01" required></label>
+          <label>पृष्ठ संख्या<input name="pages" type="number" min="1"></label>
+          <label>विक्रेता / अधिकृत संपर्क नाम *<input name="contact" maxlength="120" required></label>
+          <label>संपर्क मोबाइल *<input name="phone" type="tel" inputmode="tel" pattern="[0-9+()\\- ]{10,18}" required></label>
+          <label>प्रकाशक वेबसाइट / पुस्तक लिंक<input name="bookLink" type="url" placeholder="https://..."></label>
+          <label>कवर इमेज लिंक<input name="coverLink" type="url" placeholder="https://..."></label>
+        </div>
+        <label>पुस्तक परिचय / विवरण *<textarea name="description" rows="4" maxlength="1200" required placeholder="पुस्तक का संक्षिप्त परिचय"></textarea></label>
+        <label class="book-consent"><input type="checkbox" name="rights" required> मैं पुष्टि करता/करती हूँ कि मुझे इस पुस्तक का विवरण और कवर प्रकाशित करने का अधिकार है तथा दी गई जानकारी सही है।</label>
+        <button class="button button-full" type="submit">WhatsApp पर पुस्तक आवेदन भेजें</button>
+        <p class="book-note">अभी यह आवेदन फॉर्म है, स्वचालित फ़ाइल अपलोड नहीं। कवर/PDF फ़ाइलें सीधे सर्वर पर नहीं भेजी जातीं। WhatsApp में विवरण भेजने के बाद फ़ाइल अलग से साझा करनी होगी। बुक आईडी केवल आवेदन संदर्भ है, ISBN नहीं।</p>
+      </form>
     </section>
 
     <section id="sell" class="seller-section">
