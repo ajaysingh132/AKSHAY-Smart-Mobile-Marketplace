@@ -1,4 +1,4 @@
-const CACHE_NAME = "maa-sharda-market-v2";
+const CACHE_NAME = "maa-sharda-market-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
